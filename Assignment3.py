@@ -7,26 +7,30 @@ inventory = ["apple"]
 cash_money = 0
 gameover = False
 
-def request(x, inventory):
-    if x == "i":
-        print("=============================================")
-        print("Your inventory contains the following items: ")
-        for i in inventory:
-            print(i)
-        print("")
-        print("=============================================")
-        return None
+def input_request(options, prompt, inventory):
+    x = None
 
-    elif x == "d":
-        x = input("Which item would you like to drop? ").lower()
-        if x in inventory:
-            inventory.remove(x)
-            print("'{}' has been removed from your inventory.".format(x))
-        else:
-            print("Your inventory does not contain a(n) '{}'.".format(x))
-        return None
-    else:
-        return x
+    while x not in options:
+        x = input(prompt)
+
+        if x == "i":
+            print("=============================================")
+            print("Your inventory contains the following items: ")
+            for i in inventory:
+                print(i)
+            print("")
+            print("=============================================")
+            x = None
+
+        elif x == "d":
+            x = input("Which item would you like to drop? ").lower()
+            if x in inventory:
+                inventory.remove(x)
+                print("'{}' has been removed from your inventory.".format(x))
+            else:
+                print("Your inventory does not contain a(n) '{}'.".format(x))
+            x = None
+    return x
 
 print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
 print("Welcome to [game title goes here]. ")
@@ -46,10 +50,7 @@ time.sleep(2)
 print("Wizard: choose your path wisely young one as it will determine your fate. ")
 time.sleep(2)
 
-x = None
-while x != "w":
-    x = input("Enter 'w' to walk forward. ")
-    x = request(x, inventory)
+x = input_request(["w"], "Enter 'w' to walk forward.", inventory)
 
 print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
 print ("You appear to be in a metropoliton city.")
