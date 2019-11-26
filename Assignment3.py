@@ -11,7 +11,7 @@ def input_request(options, prompt, inventory):
     x = None
 
     while x not in options:
-        x = input(prompt)
+        x = input(prompt).lower()
 
         if x == "i":
             print("=============================================")
@@ -58,10 +58,7 @@ time.sleep(2)
 print("You see a jackhammer in front of you. ")
 time.sleep(1)
 
-x = None
-while x != "y" and x != "n":
-    x = input("Would you like to pick it up? [y/n] ").lower()
-    x = request(x, inventory)
+x = input_request(["y","n"], "Would you like to pick it up? [y/n] ", inventory)
 
 if x == "y":
     print("You pick up the jackhammer. ")
@@ -73,10 +70,7 @@ elif x == "n":
 
 print("Would you like to go to the bank or the railroad? [b/r]")
 
-x = None
-while x != "b" and x != "r":
-    x = input("Enter 'b' for bank or 'r' for railroad. ").lower()
-    x = request(x, inventory)
+x = input_request(["b","r"],"Enter 'b' for bank or 'r' for railroad. ", inventory)
 
 while gameover == False:
     if x == "r":
@@ -228,10 +222,6 @@ while gameover == False:
                         print('well at least you got a healthy snack?')
                         gameover = True
                         print("GAME OVER")
-
-
-
-
 
         elif x == "n":
             print("Then let's go to the railroad. ")
