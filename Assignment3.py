@@ -70,7 +70,7 @@ elif x == "n":
 
 print("Would you like to go to the bank or the railroad? [b/r]")
 
-x = input_request(["b","r"],"Enter 'b' for bank or 'r' for railroad. ", inventory)
+x = input_request(["b","r"], "Enter 'b' for bank or 'r' for railroad. ", inventory)
 
 while gameover == False:
     if x == "r":
@@ -79,10 +79,7 @@ while gameover == False:
         time.sleep(1)
         print("You see a crowbar on the ground.")
 
-        x = None
-        while x != "y" and x != "n":
-            x = input("Would you like to pick it up? [y/n] ").lower()
-            x = request(x, inventory)
+        x = input_request(["y","n"], "Would you like to pick it up? [y/n] ", inventory)
 
         if x == "y":
             print("You pick up the crowbar. ")
@@ -93,28 +90,18 @@ while gameover == False:
             time.sleep(1)
 
         print("It seems there is nothing else here for you.")
-        x = None
-        while x != "b":
-            x = input("Enter 'b' to go to the bank. ").lower()
-            x = request(x, inventory)
-
+        x = input_request(["b"], "Enter 'b' to go to the bank. ", inventory)
 
     if x == "b":
         print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
         print("You have arrived at the front of your local bank.")
         time.sleep(1)
-        x = None
-        while x != "y" and x != "n":
-            x = input("Would you like to break into the bank? [y/n]").lower()
-            request(x, inventory)
+        x = input_request(["y","n"], "Would you like to break into the bank? [y/n] ", inventory)
 
         if x == "y":
-            x = None
-            while x != "v" and x != "h" and x != "w":
-                print("How would you like to enter?")
-                time.sleep(1)
-                x = input("Enter 'v' to go through the vents or 'h' to hack in or 'w' to walk through the front door.").lower()
-                request(x, inventory)
+            print("How would you like to enter?")
+            time.sleep(1)
+            x = input_request(["v", "h", "w"], "Enter 'v' to go through the vents or 'h' to hack in or 'w' to walk through the front door. ", inventory)
 
             if x == "v":
                 print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
@@ -123,37 +110,22 @@ while gameover == False:
                 print("Which of the following items would you like to use?")
                 time.sleep(1)
                 print("A jackhammer, crowbar or an apple.")
-                x = None
-                while x != "jackhammer" and x != "crowbar" and x != "apple":
-                    x = input("Enter the item you would like to use: ")
-                    request(x, inventory)
+                x = input_request(["jackhammer", "crowbar", "apple"], "Enter the item you would like to use: ", inventory)
 
-                if x == "jackhammer":
-                    if "jackhammer" in inventory:
+                if x.lower() in ["crowbar", "jackhammer"]:
+                    if x in inventory:
                         cash_money = 1000
                         print("You have obtained {}$ from the bank.".format(cash_money))
                         gameover = True
                         print("GAME OVER")
                     else:
-                        print("You dont have a jackhammer!")
-                        gameover = True
-                        print("GAME OVER")
-
-                elif x == "crowbar":
-                    if "crowbar" in inventory:
-                        cash_money = 1000
-                        print("You have obtained {}$ from the bank.".format(cash_money))
-                        gameover = True
-                        print("GAME OVER")
-                    else:
-                        print('You do not have a jackhammer.')
+                        print('You do not have a {}.'.format(x))
                         gameover = True
                         print("GAME OVER")
                 elif x == "apple":
                     print('well at least you got a healthy snack? ')
                     gameover = True
                     print("GAME OVER")
-
 
             elif x == 'h':
                 x = input('do you know what you are doing? ')
@@ -193,29 +165,16 @@ while gameover == False:
                     print("Which of the following items would you like to use?")
                     time.sleep(1)
                     print("A jackhammer, crowbar or an apple.")
-                    x = None
-                    while x != "jackhammer" and x != "crowbar" and x != "apple":
-                        x = input("Enter the item you would like to use: ")
-                        request(x, inventory)
+                    x = input_request(["jackhammer", "crowbar", "apple"], "Enter the item you would like to use: ", inventory)
 
-                    if x == "jackhammer":
-                        if "jackhammer" in inventory:
+                    if x.lower() in ["crowbar", "jackhammer"]:
+                        if x in inventory:
                             cash_money = 1000
                             print("You have obtained {}$ from the bank.".format(cash_money))
                             gameover = True
                             print("GAME OVER")
                         else:
-                            print("You dont have a jackhammer!")
-                            gameover = True
-                            print("GAME OVER")
-
-                    elif x == "crowbar":
-                        if "crowbar" in inventory:
-                            cash_money = 1000
-                            print("You have obtained {}$ from the bank.".format(cash_money))
-                            gameover = True
-                        else:
-                            print('you dont have a jackhammer')
+                            print('You do not have a {}.'.format(x))
                             gameover = True
                             print("GAME OVER")
                     elif x == "apple":
@@ -226,10 +185,7 @@ while gameover == False:
         elif x == "n":
             print("Then let's go to the railroad. ")
             time.sleep(2)
-            x = None
-            while x != "r":
-                x = input("Enter 'r' to go to the railroad. ").lower()
-                request(x, inventory)
+            x = input_request(["r"], "Enter 'r' to go to the railroad. ", inventory)
 
 ###########
 input("Press enter to end the script. ")
