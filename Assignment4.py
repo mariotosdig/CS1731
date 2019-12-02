@@ -10,6 +10,8 @@ gameover = False
 def input_request(options, prompt, inventory):
     x = None
 
+    dictionary_of_things_in_room={"entrance": None, "street": "jackhammer", "outside bank": None, "vents": "coin", "matrix": None, "bank lobby":None, "railroad":"crowbar" }
+
     while x not in options:
         x = input(prompt).lower()
 
@@ -21,6 +23,9 @@ def input_request(options, prompt, inventory):
             print("")
             print("=============================================")
             x = None
+
+        elif x == "r":
+
 
         elif x == "d":
             x = input("Which item would you like to drop? ").lower()
