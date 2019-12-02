@@ -6,11 +6,11 @@ import time
 inventory = ["apple"]
 cash_money = 0
 gameover = False
+room_dict = {"entrance": None, "city": "jackhammer", "outside bank": None, "vents": "coin", "matrix": None, "bank lobby":None, "railroad":"crowbar" }
 
 def input_request(options, prompt, inventory, current_room):
     x = None
     things_in_room = ""
-    room_dict = {"entrance": None, "city": "jackhammer", "outside bank": None, "vents": "coin", "matrix": None, "bank lobby":None, "railroad":"crowbar" }
 
     while x not in options:
         x = input(prompt).lower()
@@ -47,9 +47,10 @@ def input_request(options, prompt, inventory, current_room):
             x = None
     return x
 
-def pickup_item():
-    for i in inventory:
-         room_dict[i]=[None]
+def pickup_item(item):
+    if room_dict[current_room] == item:
+        room_dict[current_room] = None
+    inventory.append(item)
 
 def start_adventure():
     print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
@@ -84,7 +85,6 @@ def start_adventure():
 
     if x == "y":
         print("You pick up the jackhammer. ")
-        inventory.append("jackhammer")
         pickup_item("jackhammer")
         time.sleep(1)
     elif x == "n":
@@ -107,7 +107,6 @@ def start_adventure():
 
             if x == "y":
                 print("You pick up the crowbar. ")
-                inventory.append("crowbar")
                 pickup_item("crowbar")
                 time.sleep(1)
             elif x == "n":
