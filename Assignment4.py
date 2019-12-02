@@ -1,5 +1,5 @@
 #Katherine Campbell and Andrew Mackenzie
-#CS1631 Assignment 3
+#CS1631 Assignment 4
 
 import time
 
