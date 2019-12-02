@@ -27,13 +27,15 @@ def input_request(options, prompt, inventory, current_room):
         elif x == "r":
             print("=============================================")
             print("Current room: = {}. ".format(current_room))
-            if things_in_room == None:
+            if room_dict[current_room] == None:
                  things_in_room = "nothing"
             else:
                 things_in_room = room_dict[current_room]
 
             print("This room contains: {}. ".format(things_in_room))
             print("=============================================")
+
+
 
         elif x == "d":
             x = input("Which item would you like to drop? ").lower()
@@ -44,6 +46,10 @@ def input_request(options, prompt, inventory, current_room):
                 print("Your inventory does not contain a(n) '{}'.".format(x))
             x = None
     return x
+
+def pickup_item():
+    for i in inventory:
+         room_dict[i]=[None]
 
 def start_adventure():
     print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
@@ -79,6 +85,7 @@ def start_adventure():
     if x == "y":
         print("You pick up the jackhammer. ")
         inventory.append("jackhammer")
+        pickup_item("jackhammer")
         time.sleep(1)
     elif x == "n":
         print("You leave the jackhammer on the ground. ")
@@ -101,6 +108,7 @@ def start_adventure():
             if x == "y":
                 print("You pick up the crowbar. ")
                 inventory.append("crowbar")
+                pickup_item("crowbar")
                 time.sleep(1)
             elif x == "n":
                 print("You leave the crowbar on the ground. ")
