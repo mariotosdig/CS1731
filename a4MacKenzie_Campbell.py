@@ -54,7 +54,8 @@ def start_adventure():
     print("Welcome to [game title goes here]. ")
     print("Choose from the options given in each prompt to forward the story. ")
     print("During any prompt you can use the input 'i' to see your inventory. ")
-    print("You can also chose to drop one of your items with an input of 'd'.")
+    print("You can also chose to drop one of your items with an input of 'd'. ")
+    print("Also you can input 'r' at any prompt to see the items in the room. ")
 
     input("Press the Enter key to start. ")
     print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
