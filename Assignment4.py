@@ -47,7 +47,7 @@ def input_request(options, prompt, inventory, current_room):
             x = None
     return x
 
-def pickup_item(item):
+def pickup_item(item, current_room):
     if room_dict[current_room] == item:
         room_dict[current_room] = None
     inventory.append(item)
@@ -85,7 +85,7 @@ def start_adventure():
 
     if x == "y":
         print("You pick up the jackhammer. ")
-        pickup_item("jackhammer")
+        pickup_item("jackhammer", current_room)
         time.sleep(1)
     elif x == "n":
         print("You leave the jackhammer on the ground. ")
@@ -107,7 +107,7 @@ def start_adventure():
 
             if x == "y":
                 print("You pick up the crowbar. ")
-                pickup_item("crowbar")
+                pickup_item("crowbar", current_room)
                 time.sleep(1)
             elif x == "n":
                 print("You leave the crowbar on the ground. ")
