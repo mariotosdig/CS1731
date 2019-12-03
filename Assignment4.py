@@ -93,7 +93,7 @@ def start_adventure():
     print("Would you like to go to the bank or the railroad? [b/r]")
 
     x = input_request(["b","r"], "Enter 'b' for bank or 'r' for railroad. ", inventory, current_room)
-    
+
     gameover = False
     while gameover == False:
         if x == "r":
@@ -126,7 +126,7 @@ def start_adventure():
             if x == "y":
                 print("How would you like to enter?")
                 time.sleep(1)
-                x = input_request(["v", "h", "w"], "Enter 'v' to go through the vents or 'h' to hack in or 'w' to walk through the front door. ", inventory)
+                x = input_request(["v", "h", "w"], "Enter 'v' to go through the vents or 'h' to hack in or 'w' to walk through the front door. ", inventory, current_room)
 
                 if x == "v":
                     print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
