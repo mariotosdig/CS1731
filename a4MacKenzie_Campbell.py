@@ -34,8 +34,6 @@ def input_request(options, prompt, inventory, current_room):
             print("This room contains: {}. ".format(things_in_room))
             print("=============================================")
 
-
-
         elif x == "d":
             x = input("Which item would you like to drop? ").lower()
             if x in inventory:
