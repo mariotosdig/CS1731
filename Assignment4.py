@@ -5,7 +5,6 @@ import time
 
 inventory = ["apple"]
 cash_money = 0
-gameover = False
 room_dict = {"entrance": None, "city": "jackhammer", "outside bank": None, "vents": "coin", "matrix": None, "bank lobby":None, "railroad":"crowbar" }
 
 def input_request(options, prompt, inventory, current_room):
@@ -94,7 +93,8 @@ def start_adventure():
     print("Would you like to go to the bank or the railroad? [b/r]")
 
     x = input_request(["b","r"], "Enter 'b' for bank or 'r' for railroad. ", inventory, current_room)
-
+    
+    gameover = False
     while gameover == False:
         if x == "r":
             print('\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n')
