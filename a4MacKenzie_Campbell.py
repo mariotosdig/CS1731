@@ -139,7 +139,11 @@ def start_adventure():
                     print("A jackhammer, crowbar or an apple.")
                     x = input_request(["jackhammer", "crowbar", "apple"], "Enter the item you would like to use: ", inventory, current_room)
 
-                    if x.lower() in ["crowbar", "jackhammer"]:
+                    if x == "apple" and x in inventory:
+                        print('well at least you got a healthy snack? ')
+                        gameover = True
+                        print("GAME OVER")
+                    else:
                         if x in inventory:
                             cash_money = 1000
                             print("You have obtained {}$ from the bank.".format(cash_money))
@@ -149,10 +153,7 @@ def start_adventure():
                             print('You do not have a {}.'.format(x))
                             gameover = True
                             print("GAME OVER")
-                    elif x == "apple":
-                        print('well at least you got a healthy snack? ')
-                        gameover = True
-                        print("GAME OVER")
+
 
                 elif x == 'h':
                     current_room = "outside bank"
@@ -197,7 +198,11 @@ def start_adventure():
                         print("A jackhammer, crowbar or an apple.")
                         x = input_request(["jackhammer", "crowbar", "apple"], "Enter the item you would like to use: ", inventory, current_room)
 
-                        if x.lower() in ["crowbar", "jackhammer"]:
+                        if x == "apple" and x in inventory:
+                            print('well at least you got a healthy snack? ')
+                            gameover = True
+                            print("GAME OVER")
+                        else:
                             if x in inventory:
                                 cash_money = 1000
                                 print("You have obtained {}$ from the bank.".format(cash_money))
@@ -207,10 +212,6 @@ def start_adventure():
                                 print('You do not have a {}.'.format(x))
                                 gameover = True
                                 print("GAME OVER")
-                        elif x == "apple":
-                            print('well at least you got a healthy snack?')
-                            gameover = True
-                            print("GAME OVER")
 
             elif x == "n":
                 print("Then let's go to the railroad. ")
