@@ -1,18 +1,10 @@
-words = input("enter a sentence bro: ")
-words = words.split()
-
+words = input("enter a sentence bro: ").split()
 count = 0
 for word in words:
-    letter = word[0]
-    if letter in ['a','e','i','o','u']:
-        word += 'way'
+    if word[0] in ['a','e','i','o','u']: word += 'way'
     else:
-        letterx = letter.lower()
-        word = word[1:] + letterx + 'ay'
-        if letter == letter.upper():
-            word = word.capitalize()
+        word = word[1:] + word[0].lower() + 'ay'
+        if word[0] == word[0].upper(): word = word.capitalize()
     words[count] = word
     count += 1
-
-words = " ".join(words)
-print(words)
+print(" ".join(words))
