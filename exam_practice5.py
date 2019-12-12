@@ -18,22 +18,13 @@ for i in range(3):
         user_input = int(input("bro what the number be lmao. "))
         if binaryForSomeFuckingReason == True:
             ## convert that shit:
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
-            if True:
-                pass
+
+
+
+
+
+
+
 
 
             pass
