@@ -15,16 +15,14 @@ else:
 
 for i in range(3):
     if correct == False:
-        user_input = int(input("bro what the number be lmao. "))
+        user_input = input("bro what the number be lmao. ")
         if binaryForSomeFuckingReason == True:
-            ## convert that shit:
-
-
-
-
-
-
-            pass
+            try:
+                user_input = int(user_input,2)
+            except ValueError:
+                raise Exception("those aren't binary numbers you fucking idiot")
+        else:
+            user_input = int(user_input,10)
         if number == user_input:
             print('ye')
             correct = True
