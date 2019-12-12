@@ -24,9 +24,6 @@ for i in range(3):
 
 
 
-
-
-
             pass
         if number == user_input:
             print('ye')
