@@ -1,10 +1,12 @@
-import java.util;
+import java.util.*;
 public class HelloWorld{
-    public static voids main(String[] args){
+    public static void main(String[] args){
         System.out.println(Math.sqrt(-1) == Math.sqrt(-1));
     }
+}
 
-    class OtherClass{
-        System.out.println("Hello World.");
+class OtherClass{
+    public void name(){
+      System.out.println("Hello World.");
     }
 }
