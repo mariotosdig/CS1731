@@ -4,6 +4,5 @@ public class SpiderBot extends Robot{
       super(city, ave, str, dir);
     }
     public void crawlWalls(){
-      do stuff idk
     }
 }
