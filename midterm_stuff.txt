@@ -3,3 +3,5 @@ types of questions
 -given code with errors, identify the errors
 -given working code, explain what it does
 -write java methods/classes
+
+textbook chapters 1-5
