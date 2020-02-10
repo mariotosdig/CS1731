@@ -9,9 +9,18 @@ public class SpiderBot extends RobotSE{
       super(city, ave, str, dir);
     }
     public void crawlWalls(){
-      
+      crawlOneBuilding();
+      crawlOneBuilding();
+      crawlOneBuilding();
     }
     public void crawlOneBuilding(){
+      turnLeft();
+      move(5);
+      turnRight();
+      move(2);
+      turnRight();
+      move(5);
+      turnLeft();
 
     }
 }

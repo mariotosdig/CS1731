@@ -43,7 +43,6 @@ public class TestSpiderBot{
         new Wall(tokyo, 4, 5, Direction.EAST);
         new Wall(tokyo, 5, 5, Direction.WEST);
         new Wall(tokyo, 5, 5, Direction.EAST);
-
-
+        peter.crawlWalls();
     }
 }
