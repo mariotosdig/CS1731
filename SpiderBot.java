@@ -6,21 +6,21 @@
 import becker.robots.*;
 public class SpiderBot extends RobotSE{
     public SpiderBot(City city, int ave, int str, Direction dir){
-      super(city, ave, str, dir);
+        super(city, ave, str, dir);
     }
     public void crawlWalls(){
-      crawlOneBuilding();
-      crawlOneBuilding();
-      crawlOneBuilding();
+        crawlOneBuilding();
+        crawlOneBuilding();
+        crawlOneBuilding();
     }
     public void crawlOneBuilding(){
-      turnLeft();
-      move(5);
-      turnRight();
-      move(2);
-      turnRight();
-      move(5);
-      turnLeft();
+        turnLeft();
+        move(5);
+        turnRight();
+        move(2);
+        turnRight();
+        move(5);
+        turnLeft();
 
     }
 }
