@@ -1,0 +1,5 @@
+types of questions
+-short answer/definition
+-given code with errors, identify the errors
+-given working code, explain what it does
+-write java methods/classes
