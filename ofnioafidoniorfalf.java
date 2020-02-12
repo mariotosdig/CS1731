@@ -9,4 +9,4 @@ public class ofnioafidoniorfalf{
         r1.move();
       }
     } //main
-} //not main
+} //not main 
