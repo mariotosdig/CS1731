@@ -9,7 +9,7 @@ public class GoAround{
 	public static void main(String[] args){
 
 		City atlantis = new City("layout.txt");
-    Robot stacys_mom = new Robot(atlantis, 1, 2, Direction.SOUTH);
+    	Robot stacys_mom = new Robot(atlantis, 1, 2, Direction.SOUTH);
 		int x = 1;
 		while(x == 1){
 			while (stacys_mom.canPickThing() == false && stacys_mom.frontIsClear()){
