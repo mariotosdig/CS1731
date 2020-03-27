@@ -7,7 +7,7 @@ def while_loop(condition, increment, i):
     i += increment
 
     while_loop(True, 1, i)
-
+    
 
 print("program start")
 while_loop(True, 1, i=0)
