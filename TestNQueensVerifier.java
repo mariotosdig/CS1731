@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.*;
 
 public class TestNQueensVerifier {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws FileNotFoundException {
         // reads the user input using a scanner object to get the file location
         Scanner sc_line = new Scanner(System.in);
         System.out.println("Please enter the full file path for the board configuration:  ");
